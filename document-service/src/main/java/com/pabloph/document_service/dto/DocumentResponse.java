@@ -1,5 +1,6 @@
 package com.pabloph.document_service.dto;
 
+import java.time.LocalDateTime;
 import com.pabloph.document_service.entity.enums.DocumentStatus;
 
 public record DocumentResponse(
@@ -7,7 +8,7 @@ public record DocumentResponse(
     String name,
     String originalName,
     String contentType,
-    String filePath,
-    DocumentStatus status
-) {
-}
+    Long size,
+    DocumentStatus status,
+    LocalDateTime createdAt
+) {}
