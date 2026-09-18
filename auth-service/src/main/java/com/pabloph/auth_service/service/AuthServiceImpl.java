@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.pabloph.auth_service.dto.LoginRequest;
 import com.pabloph.auth_service.dto.RegisterRequest;
 import com.pabloph.auth_service.entity.Role;
 import com.pabloph.auth_service.entity.User;
@@ -40,5 +41,22 @@ public class AuthServiceImpl implements AuthService {
                 .build();
 
         userRepository.save(user);
+    }
+
+    
+    @Override
+    public void login(LoginRequest request) {
+
+        User user = userRepository.findByEmail(request.email())
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        boolean passwordMatches = passwordEncoder.matches(
+                request.password(),
+                user.getPassword()
+        );
+
+        if (!passwordMatches) {
+            throw new RuntimeException("Contraseña incorrecta");
+        }
     }
 }
