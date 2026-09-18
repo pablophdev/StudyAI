@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pabloph.auth_service.dto.AuthResponse;
 import com.pabloph.auth_service.dto.LoginRequest;
 import com.pabloph.auth_service.dto.RegisterRequest;
 import com.pabloph.auth_service.service.AuthService;
@@ -34,14 +35,12 @@ public class AuthController {
     
 
     @PostMapping("/login")
-    public ResponseEntity<Map<String, String>> login(
-            @Valid @RequestBody LoginRequest request
-    ) {
-
-        authService.login(request);
+        public ResponseEntity<AuthResponse> login(
+        @Valid @RequestBody LoginRequest request
+        ) {
 
         return ResponseEntity.ok(
-                Map.of("message", "Login exitoso")
+                    authService.login(request)
         );
-    }
+}
 }
