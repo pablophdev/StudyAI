@@ -1,0 +1,13 @@
+/home/pvblouss/Escritorio/StudyAI/auth-service/src/main/java/com/pabloph/auth_service/AuthServiceApplication.java
+/home/pvblouss/Escritorio/StudyAI/auth-service/src/main/java/com/pabloph/auth_service/config/SecurityConfig.java
+/home/pvblouss/Escritorio/StudyAI/auth-service/src/main/java/com/pabloph/auth_service/controller/AuthController.java
+/home/pvblouss/Escritorio/StudyAI/auth-service/src/main/java/com/pabloph/auth_service/dto/AuthResponse.java
+/home/pvblouss/Escritorio/StudyAI/auth-service/src/main/java/com/pabloph/auth_service/dto/LoginRequest.java
+/home/pvblouss/Escritorio/StudyAI/auth-service/src/main/java/com/pabloph/auth_service/dto/RegisterRequest.java
+/home/pvblouss/Escritorio/StudyAI/auth-service/src/main/java/com/pabloph/auth_service/entity/Role.java
+/home/pvblouss/Escritorio/StudyAI/auth-service/src/main/java/com/pabloph/auth_service/entity/User.java
+/home/pvblouss/Escritorio/StudyAI/auth-service/src/main/java/com/pabloph/auth_service/repository/UserRepository.java
+/home/pvblouss/Escritorio/StudyAI/auth-service/src/main/java/com/pabloph/auth_service/security/JwtAuthenticationFilter.java
+/home/pvblouss/Escritorio/StudyAI/auth-service/src/main/java/com/pabloph/auth_service/security/JwtService.java
+/home/pvblouss/Escritorio/StudyAI/auth-service/src/main/java/com/pabloph/auth_service/service/AuthService.java
+/home/pvblouss/Escritorio/StudyAI/auth-service/src/main/java/com/pabloph/auth_service/service/AuthServiceImpl.java
