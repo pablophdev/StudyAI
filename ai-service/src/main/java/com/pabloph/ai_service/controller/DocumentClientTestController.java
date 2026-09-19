@@ -23,4 +23,14 @@ public class DocumentClientTestController {
     public DocumentInternalResponse test(@PathVariable Long id) {
         return documentServiceClient.findById(id);
     }
+
+    @GetMapping("/{id}/download-test")
+    public String downloadTest(@PathVariable Long id) {
+
+    byte[] pdf = documentServiceClient.download(id);
+
+        return "PDF descargado correctamente. Tamaño: "
+            + pdf.length
+            + " bytes";
+    }
 }

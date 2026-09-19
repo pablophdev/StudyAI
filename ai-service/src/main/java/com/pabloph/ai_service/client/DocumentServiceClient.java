@@ -10,4 +10,7 @@ public interface DocumentServiceClient {
 
     @GetExchange("/{id}")
     DocumentInternalResponse findById(@PathVariable Long id);
+
+    @GetExchange("/{id}/download")
+    byte[] download(@PathVariable Long id);
 }
