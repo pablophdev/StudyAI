@@ -28,4 +28,20 @@ public class PdfExtractionService {
                 .map(Document::getText)
                 .reduce("", (text1, text2) -> text1 + "\n" + text2);
     }
+
+
+        public List<Document> extractDocuments(byte[] pdfBytes, String fileName) {
+
+        ByteArrayResource resource = new ByteArrayResource(pdfBytes) {
+            @Override
+            public String getFilename() {
+             return fileName;
+            }
+        };
+
+        PagePdfDocumentReader reader =
+                new PagePdfDocumentReader(resource);
+
+        return reader.read();
+    }
 }
