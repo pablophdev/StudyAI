@@ -2,11 +2,12 @@ package com.pabloph.auth_service.controller;
 import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.security.core.Authentication;
 import com.pabloph.auth_service.dto.AuthResponse;
 import com.pabloph.auth_service.dto.LoginRequest;
 import com.pabloph.auth_service.dto.RegisterRequest;
@@ -42,5 +43,20 @@ public class AuthController {
         return ResponseEntity.ok(
                     authService.login(request)
         );
-}
+
+
+        
+        }
+
+
+        @GetMapping("/me")
+        public ResponseEntity<Map<String, String>> me(Authentication authentication) {
+
+        return ResponseEntity.ok(
+                    Map.of(
+                            "email", authentication.getName(),
+                        "message", "Token válido"
+                )
+        );
+        }
 }
